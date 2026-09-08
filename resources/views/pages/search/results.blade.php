@@ -7,7 +7,7 @@
         <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Search Results</h1>
         <p class="text-gray-600 dark:text-gray-400">Showing results for: <span class="font-semibold">"{{ $query }}"</span></p>
     </div>
-
+    {{-- Cek --}}
     {{-- Tabel Hasil Pencarian --}}
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <div class="relative overflow-x-auto">
@@ -26,9 +26,9 @@
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{-- Buat nama produk bisa diklik untuk melihat detail --}}
                             @if(Auth::user()->role === 'admin')
-                                <a href="{{ route('admin.products.show', $product) }}" class="hover:underline">{{ $product->name }}</a>
+                            <a href="{{ route('admin.products.show', $product) }}" class="hover:underline">{{ $product->name }}</a>
                             @else
-                                <a href="{{ route('manager.products.show', $product) }}" class="hover:underline">{{ $product->name }}</a>
+                            <a href="{{ route('manager.products.show', $product) }}" class="hover:underline">{{ $product->name }}</a>
                             @endif
                         </td>
                         <td class="px-6 py-4">{{ $product->sku }}</td>
